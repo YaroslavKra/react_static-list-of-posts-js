@@ -1,34 +1,13 @@
 import React from 'react';
 import './PostList.scss';
-import { UserInfo } from '../UserInfo/UserInfo';
-import { CommentList } from '../CommentList/CommentList';
+import { PostInfo } from '../PostInfo/PostInfo';
 
 export const PostList = ({ posts }) => (
   <div className="PostList">
     {posts.map(post => (
-      <div key={post.id} className="PostInfo">
-        <div className="PostInfo__header">
-          <h3 className="PostInfo__title">{post.title}</h3>
-
-          <p>
-            {' Posted by  '}
-
-            <UserInfo user={post.user} />
-          </p>
-        </div>
-
-        <p className="PostInfo__body">{post.body}</p>
-
-        <hr />
-
-        {post.comments.length === 0 ? (
-          <b data-cy="NoCommentsMessage">No comments yet</b>
-        ) : (
-          <div className="CommentList">
-            <CommentList comments={post.comments} />
-          </div>
-        )}
-      </div>
+      <PostInfo key={post.id} post={post} />
     ))}
   </div>
 );
+
+export default PostList;
