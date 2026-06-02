@@ -1,4 +1,4 @@
-import CommentList from '../CommentList/CommentList';
+import { CommentList } from '../CommentList/CommentList';
 import { UserInfo } from '../UserInfo/UserInfo';
 
 export const PostInfo = ({ post }) => (
